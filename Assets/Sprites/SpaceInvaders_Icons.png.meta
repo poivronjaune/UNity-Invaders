@@ -55,7 +55,7 @@ TextureImporter:
     second: Checkmark
   - first:
       213: -7261424227482423552
-    second: SpaceInvaders_Icons_17
+    second: Restart
   - first:
       213: 2732323641301557063
     second: Play
@@ -609,7 +609,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpaceInvaders_Icons_17
+      name: Restart
       rect:
         serializedVersion: 2
         x: 64

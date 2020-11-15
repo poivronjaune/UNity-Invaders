@@ -14,15 +14,20 @@ public class AlienMaster : MonoBehaviour
 {
     public GameObject bulletPrefab;
     public GameObject mothershipPrefab;
+    public AudioClip waveEnterSFX;
+
     public float MAX_LEFT = -2.5f;
     public float MAX_RIGHT = 2.5f;
+    private const float MAX_MOVE_SPEED = 0.02f;
+    private const float START_Y = 0.85f;
+    private const float END_Y = -3.23f;
 
     private Vector3 hMoveDistance = new Vector3(0.03f,0,0);
     private Vector3 vMoveDistance = new Vector3(0,0.08f, 0);
     private Vector3 motherShipSpawnPos = new Vector3(3.16f,4.37f,0);
 
 
-    private const float MAX_MOVE_SPEED = 0.02f;
+
 
     private float moveTimer = 0.05f;
     private const float moveTime = 0.05f;  // Multiply by number of enemies on screen
@@ -37,6 +42,7 @@ public class AlienMaster : MonoBehaviour
 
     public static List<GameObject> allAliens = new List<GameObject>();
     private bool movingRight = true;
+    private bool entering = true;
 
     // Start is called before the first frame update
     void Start()
@@ -45,27 +51,33 @@ public class AlienMaster : MonoBehaviour
         {
             allAliens.Add(go);
         }
+        AudioManager.PlaySoundEffect(waveEnterSFX);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-            Instantiate(bulletPrefab, new Vector3(0, 0.87f,0), Quaternion.identity);
+        if (entering)
+        {
+            transform.Translate(Vector2.down * Time.deltaTime * 10f);
+            if (transform.position.y <= START_Y)
+                entering = false;
+        }
+        else
+        {
+            if (moveTimer <= 0)
+                MoveEnemies();
 
+            if (shootTimer <= 0)
+                Shoot();
 
-        if (moveTimer <= 0)
-            MoveEnemies();
+            if (mothershipTimer <= 0)
+                SpawnMothership();
 
-        if (shootTimer <= 0)
-            Shoot();
-
-        if (mothershipTimer <= 0)
-            SpawnMothership();
-
-        moveTimer -= Time.deltaTime;
-        shootTimer -= Time.deltaTime;
-        mothershipTimer -= Time.deltaTime;
+            moveTimer -= Time.deltaTime;
+            shootTimer -= Time.deltaTime;
+            mothershipTimer -= Time.deltaTime;
+        }
 
     }
 

@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 2156132323876354097}
   - component: {fileID: 2156132323876354096}
   - component: {fileID: 2156132323876354099}
+  - component: {fileID: 7225671331875658225}
+  - component: {fileID: 7250074311706903090}
+  - component: {fileID: 2086011571011864644}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Untagged
@@ -129,3 +132,51 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6998517, y: 0.7050266}
   m_EdgeRadius: 0
+--- !u!114 &7225671331875658225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2156132323876354063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb05a80ec8b34e54d8bd5c34512057a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallSpeed: 7
+  pickupSFX: {fileID: 8300000, guid: 8a938bfbcab5ee348a9822899b32e0ff, type: 3}
+--- !u!114 &7250074311706903090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2156132323876354063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7be3a9d7d1e8ec41b8759cb2b31f108, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seconds: 3
+--- !u!50 &2086011571011864644
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2156132323876354063}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 1
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

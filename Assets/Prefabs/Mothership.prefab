@@ -124,6 +124,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreValue: 500
+  cruiseSFX: {fileID: 8300000, guid: d364fa9bb84d58f408907250c24e6378, type: 3}
+  explodeSFX: {fileID: 8300000, guid: 85cc243aa121e584bb93fa46cc49f438, type: 3}
 --- !u!114 &-9080985114948752635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,6 +138,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d733748eadb565a48b2135b8743d7e15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreValue: 0
+  scoreValue: 700
+  lifePrefab: {fileID: 3650237158305498740, guid: 36b40952dd29e7d4a811bd7ad26005d4,
+    type: 3}
+  healthPrefab: {fileID: 7495979485775460065, guid: a9614d00719ac4f47a0a54d6ae5b4e1b,
+    type: 3}
+  coinPrefab: {fileID: 2156132323876354063, guid: 2839a3e3f3c4cbb4fb62c73e24f8fba3,
+    type: 3}
+  explodeSFX: {fileID: 8300000, guid: 14f41341abccae547bb307f01b12a961, type: 3}
   explosion: {fileID: 7535781559193720515, guid: 7951cf0fb3e3b7542af023cb424c6be4,
     type: 3}

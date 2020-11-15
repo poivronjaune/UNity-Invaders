@@ -6,10 +6,17 @@ public class Mothership : MonoBehaviour
 {
 
     public int scoreValue;
+    public AudioClip cruiseSFX;
+    public AudioClip explodeSFX;
 
     private const float MAX_LEFT = -4f;
     private float speed = 5f;
-    
+
+    private void Start()
+    {
+        AudioManager.PlaySoundEffect(cruiseSFX);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -25,6 +32,7 @@ public class Mothership : MonoBehaviour
         {
             UIManager.UpdateScore(scoreValue);
             Destroy(collision.gameObject);
+            AudioManager.PlaySoundEffect(explodeSFX);
             Destroy(gameObject);
         }
     }
